@@ -1,4 +1,4 @@
-#include <stdio.>
+#include <stdio.h>
 #define T(a,n) t[a[n]-'0'][a[n+1]-'0'][a[n+2]-'0'][a[n+3]-'0']
 #define P(a) printf("%c%c\n", T(a,0), T(a,4))
 
@@ -8,6 +8,7 @@ int main() {
     char a[] = "10001111";
     char b[] = "10011110";
 
+    // creat a 4D table
     int c = 0;
     char t[2][2][2][2] = {0};
     for (int i1=0; i1<2; i1++) {
@@ -23,6 +24,7 @@ int main() {
     P(b);
     return 0;
 }
+
 char n2c(int n) {
     if (n < 10) {
         return n+'0';
