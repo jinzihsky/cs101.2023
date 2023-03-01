@@ -23,3 +23,10 @@ int main() {
     P(b);
     return 0;
 }
+char n2c(int n) {
+    if (n < 10) {
+        return n+'0';
+    } else {
+        return n+'A'-10;
+    }
+}
