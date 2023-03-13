@@ -1,0 +1,23 @@
+01 #include <stdio.h>
+02 
+03 int main() {
+04     FILE * ifp, * ofp;
+05     char c;
+06     int line_number = 1;
+07     ifp = fopen(__FILE__, "r");
+08     ofp = fopen("main2.txt", "w");
+09     if (ifp && ofp) {
+10         fprintf(ofp, "%02d ", line_number);
+11         while ((c = getc(ifp)) != EOF) {
+12             putc(c, ofp);
+13             if (c == '\n') {
+14                 line_number++;
+15                 fprintf(ofp, "%02d ", line_number);
+16             }
+17         }
+18         fclose(ifp);
+19         fclose(ofp);
+20     }
+21     printf("\n");
+22     return 0;
+23 }
