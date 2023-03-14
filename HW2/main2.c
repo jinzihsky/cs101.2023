@@ -2,22 +2,14 @@
 
 int main() {
     char c;
+    FILE * ifp = fopen(__FILE__, "r+");
+    FILE * ofp = fopen("main2.txt", "w+");
     int num = 1;
-    FILE * ifp = fopen(__FILE__, "r");
-    FILE * ofp = fopen("main2.txt", "w");
-    if (ifp && ofp) {
-        fprintf(ofp, "%02d ", num);
-        while ((c = getc(ifp)) != EOF) {
-            putc(c, ofp);
-            if (c == '\n') {
-                num++;
-                fprintf(ofp, "%02d ", num);
-            }
-        }
-        fclose(ifp);
-        fclose(ofp);
-    }
-    printf("\n");
+    fprintf(ofp, "01 ");
+    while ((c = getc(ifp)) != EOF) {
+        c == '\n' ? fprintf(ofp,"\n%02d ", ++num) : fprintf(ofp, "%c", c);
+    }   
+    fclose(ifp);
+    fclose(ofp);
     return 0;
 }
-
