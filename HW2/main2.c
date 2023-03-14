@@ -2,7 +2,7 @@
 
 int main() {
     char c;
-    FILE * ifp = fopen(__FILE__, "r+");
+    FILE * ifp = fopen(main2.c, "r+");
     FILE * ofp = fopen("main2.txt", "w+");
     int num = 1;
     fprintf(ofp, "01 ");
