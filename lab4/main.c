@@ -2,8 +2,7 @@
 
 void rep(char* str, char oldC, char newC){
     while (*str) {
-        (*str == oldC) ? (*str = newC) : 0 ;
-        str++;
+        (*str == oldC) ? (*str = newC, str) : str++;
     }
 }
 
