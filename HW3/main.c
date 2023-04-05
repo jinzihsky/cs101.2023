@@ -6,7 +6,7 @@
 
 // Settings
 #define RECORD "record.bin"
-#define TXT "lotto[%05d].txt"
+#define TXT "lotto%05d.txt"
 
 #define LOT_PRICE 100     // price of one set of lotto numbers
                           // min possible lot number is 1
