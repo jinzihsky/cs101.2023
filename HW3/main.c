@@ -11,31 +11,30 @@ typedef struct {
 } lotto_record_t;
 
 
-int num[7];
 int lot[69];
 
-void init_lot(void) {
+void init(void) {
     for (int i = 0; i < 69; i++) {
         lot[i] = i+1;
     }
 }
 
 
-void swap_lot(int i, int j) {
-   int tmp = lot[i];
+void swap(int i, int j) {
+   int p = lot[i];
    lot[i] = lot[j];
-   lot[j] = tmp;
+   lot[j] = p;
 }
 
-void shuf_lot(void) {
-    int tmp, k;
+void shuf(void) {
+    int p, k;
     for (int i = 69-1; i > 0; i--) {
         k = rand() % (i+1);
-        swap_lot(i, k);
+        swap(i, k);
     }
 }
 
-int sp_lot(void) {
+int sp(void) {
     for (int i = 6; i < 69; i++) {
         if (lot[i] <= 10) {
             return lot[i];
@@ -44,12 +43,12 @@ int sp_lot(void) {
     return -1;
 }
 
-void sort_lot(void) {
-    int tmp;
+void sort(void) {
+    int p;
     for (int i = 0; i < 6; i++) {
         for (int j=0; j < 6; j++) {
             if (lot[i] < lot[j]) {
-                swap_lot(i, j);
+                swap(i, j);
             }
         }
     }
@@ -144,11 +143,11 @@ int main(int argc, char* argv[]){
     fprintf(fpt, "= %s =\r\n", timstr);
     strcpy(lotto[last+1].receipt_time, timstr);
     
-    init_lot();
+    init();
 
     for (int i = 0; i < 5; i++) {
-        shuf_lot();
-        sort_lot();
+        shuf();
+        sort();
         fprintf(fpt, " [%1d]: ",i+1);
         for (int j = 0; j < 6; j++) {
             if (i<n) {
@@ -160,7 +159,7 @@ int main(int argc, char* argv[]){
             }
         }
         if (i<n) {
-            int splot = sp_lot();
+            int splot = sp();
             fprintf(fpt, "%02d\n", splot);
             lotto[last+1].lotto_set[i][6] = splot;
         } else {
