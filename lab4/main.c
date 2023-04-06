@@ -3,9 +3,11 @@
 void rep(char* str, char oldC, char newC){
     while (*str) {
         (*str == oldC) ? (*str = newC, str) : str++;
-    }//if(*str == oldC){
-    //*str = newC;
-    //str++;
+    }
+    /*if(*str == oldC){
+    *str = newC;
+    }
+    str++;*/
 }
 
 int main(){
