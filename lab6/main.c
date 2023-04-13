@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int multi(int i, int j) {
+int multiplication(int i, int j) {
     if (i > 9) {
         return 0;
     }
@@ -9,10 +9,10 @@ int multi(int i, int j) {
         i++;
         printf("\n");
     }
-    return multi(i, j+1);
+    return multiplication(i, j+1);
 }
 
 int main() {
-    multi(1,1);
+    multiplication(1,1);
     return 0;
 }
