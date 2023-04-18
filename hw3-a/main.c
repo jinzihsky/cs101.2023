@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define N 25
+#define N 20
 
 int c = 0;
 time_t t;
