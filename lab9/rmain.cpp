@@ -17,9 +17,13 @@ class ReplaceMyString {
                 break;
             }
             if (c == needle[0]) {
+                string buff="";
+                buff += c;
                 for (int i=1; i<needle.length(); i++) {
-                    in >> c;
+                    in.get(c);
+                    buff += c;
                     if (c != needle[i]) {
+                        out << buff;
                         break;
                     }
                     if (i == needle.length()-1) {
