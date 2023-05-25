@@ -12,7 +12,6 @@ class ReplaceMyString {
         ofstream out("rmain.cpp");
         char c;
         while (true) {
-            //in >> c; // 使用 >> 會直接忽略空白等特殊字元，可以嘗試 in.peek()
             in.get(c);
             if (in.eof()) {
                 break;
