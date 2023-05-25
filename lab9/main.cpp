@@ -16,12 +16,10 @@ class ReplaceMyString {
             if (in.eof()) {
                 break;
             }
-            // test: III
             if (c == needle[0]) {
                 string buff="";
                 buff += c;
                 for (int i=1; i<needle.length(); i++) {
-                    //in >> c;
                     in.get(c);
                     buff += c;
                     if (c != needle[i]) {
