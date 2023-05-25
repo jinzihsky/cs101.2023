@@ -43,6 +43,6 @@ class ReplaceMyString {
 
 int main() {
     ReplaceMyString my;
-    my.replaceString("IU is best", "IU is best is best");
+    my.replaceString("IU", "IU is best");
     return 0;
 }
